@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+@font-face {
+    font-family: 'Franchise-Bold';
+    src: url('Franchise-Bold.ttf') format('truetype'),
+
+    font-weight: bold;
+    font-style: normal;
+}
+}
+
+		.container {
+
+		}
+
+		.field {
+			width: 1066px;
+			height: 600px;
+			margin: 0 auto;
+		}
+
+		.field-image-container{
+			height: 0px;
+			width: 0px;
+		}
+
+		.field-image{
+			width: 1066px;
+			height: 600px;
+			position: relative;
+			z-index: -1;
+			top: 0;
+			left: -50%;
+		}	
+
+		.field-image2{
+			width: 1066px;
+			height: 600px;
+			position: relative;
+			z-index: -1;
+			top: 0;
+			left: -50%;
+		}	
+
+		.positions {
+			position: relative;
+			top: 0;
+			left: 0;
+
+		}
+
+		button {cursor: pointer;}
+
+		.position-button {
+			font-family: 'Franchise-Bold', sans-serif;
+			font-size: 17px;
+			border-color: transparent;
+			border-width: medium;
+			border-radius: 30px;
+			height: 30px;
+			width: 30px;
+			z-index: 0;
+		}
+
+
+		.def{
+			background-color: black;
+			color: white;
+		}
+
+		.off{
+			background-color: white;
+			color: green;
+		}
+
+
+		#cb1 {position: relative;top: 190px; left: 218px;}
+		#s1  {position: relative;top:  80px; left: 353px;}
+
+		#olb1{position: relative;top: 190px; left: 358px;}
+		#ilb {position: relative;top: 190px; left: 425px;}
+		#olb2{position: relative;top: 190px; left: 483px;}
+
+		#e1  {position: relative;top: 264px; left: 230px;}
+		#t   {position: relative;top: 264px; left: 268px;}
+		#n   {position: relative;top: 264px; left: 295px;}
+		#e2  {position: relative;top: 264px; left: 325px;}
+
+		#s2  {position: relative;top:  80px; left: 345px;}
+		#cb2 {position: relative;top: 190px; left: 508px;}
+
+
+
+
+
+		#qb {position: relative;top: 352px; left: 213px;}
+		#rb {position: relative;top: 354px; left: 215px}
+		#wr1{position: relative;top: 282px; left: 218px;}
+
+		#te {position: relative;top: 272px; left: 379px;}
+
+		#lt {position: relative;top: 272px; left: 382px;}
+		#lg {position: relative;top: 272px; left: 382px;}
+		#c  {position: relative;top: 270px; left: 382px;}
+		#rg {position: relative;top: 272px; left: 382px;}
+		#rt {position: relative;top: 272px; left: 382px;}
+
+		#sr1{position: relative;top: 282px; left: 446px;}
+		#wr2{position: relative;top: 272px; left: 576px;}
+
+
+
+
+
+
+		.qb-window {display: none; position: relative; z-index: 1;}
+
+
+		.player-note{
+			display: none;
+			position: relative;
+			z-index: 1;
+			top: -10px;
+			left: 610px;
+			width: 400px;
+			height: 200px;
+			background-color: lightgrey;
+		}
+
+		.show {display: block;}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+
+
+		<div class="field">
+
+			<div class="field-image-container">
+				<img class="field-image2" src="1x/footballfield-real.png">
+				<img class="field-image" src="1x/football-field.png">
+			</div>
+
+			<div class="positions">
+
+				<div class="defense">
+						<button id="cb1" class="position-button def">CB</button>
+						<button id="s1" class="position-button def">S</button>
+
+						<button id="olb1" class="position-button def">LB</button>
+						<button id="ilb" class="position-button def">LB</button>
+						<button id="olb2" class="position-button def">LB</button>
+
+						<button id="e1" class="position-button def">E</button>
+						<button id="t" class="position-button def">T</button>
+						<button id="n" class="position-button def">N</button>
+						<button id="e2" class="position-button def">E</button>
+
+						<button id="s2" class="position-button def">S</button>
+						<button id="cb2" class="position-button def">CB</button>
+
+
+				
+				</div>
+
+				<div class="offense">
+					
+						<button id="wr1" class="position-button off">WR</button>
+						<button id="te" class="position-button off">TE</button>
+
+						<button id="lt" class="position-button off">LT</button>
+						<button id="lg" class="position-button off">LG</button>
+						<button id="c" class="position-button off">C</button>
+						<button id="rg" class="position-button off">RG</button>
+						<button id="rt" class="position-button off">RT</button>
+
+						<button id="sr1" class="position-button off">SR</button>
+						<button id="wr2" class="position-button off">WR</button>
+
+						<button id="qb" class="position-button off">QB</button>
+						<button id="rb" class="position-button off">RB</button>
+		
+						<img id="qb-window" class="qb-window" src="1x/qb-window.png">
+					
+				</div>
+
+				<div id="note" class="player-note">
+					<h1>Der Quarterback</h1>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	document.getElementById("qb").onclick = function() {showqb()};
+
+function showqb() {
+  var x = document.getElementById("note");
+  if (x.className === "player-note") {
+    x.className += " show";
+  } else {
+    x.className = "player-note";
+  }
+}
+</script>
+</html>
